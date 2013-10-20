@@ -1,6 +1,6 @@
 import math
 
-def pandigital(nb):
+def is_pandigital(nb):
     digits = []
     for i in range(1, len(str(nb))+1):
         digits.append(i)
@@ -14,12 +14,14 @@ def pandigital(nb):
 def is_prime(nb):
     if nb == 1:
         return False
-    for i in range(2, int(math.sqrt(nb)) + 1):
+    if nb%2 == 0:
+        return False
+    for i in range(3, int(nb**0.5)+1, 2):
         if nb%i == 0:
             return False
     return True
 
-def perfect(n):
+def is_perfect(n):
     sum = 0
     for i in range(1, int(n/2)+1):
         if n%i == 0:
@@ -28,25 +30,20 @@ def perfect(n):
         return True
     return False
 
-def abundant(n):
+def is_abundant(n):
     if sum(divisors(n)) == n:
-                return True
+        return True
     return False
-
-def factorial(nb):
-    for i in range(2, nb):
-        nb *= i
-    return nb
 
 def divisors(nb, extremum = False):
     divisors = []
     inf = 1 if extremum else 2
     
-    for i in range(inf, int(math.sqrt(nb)) + 1):
-        if nb%i == 0:
-            if nb//i > i:
+    for i in range(inf, int(nb**0.5)+1):
+        q, r = divmod(nb, i)
+        if r == 0:
+            if q >= i:
                 divisors.append(i)
-                divisors.append(nb//i)
-            elif nb//i == i:
-                divisors.append(i)
+                if q > i:
+                    divisors.append(nb//i)
     return divisors

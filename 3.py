@@ -1,9 +1,9 @@
 import functions
 
-divisors = functions.divisors(600851475143)
-divisors.sort(reverse=True)
+divs = functions.divisors(600851475143)
+divs.sort(reverse=True)
 
-for i in divisors:
-    if functions.prime(i):
+for i in divs:
+    if functions.is_prime(i):
         print(i)
         break
