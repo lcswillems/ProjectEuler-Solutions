@@ -13,7 +13,7 @@ def is_pandigital(nb):
     return True
 
 def is_prime(nb):
-    if nb == 1:
+    if nb < 2:
         return False
     if nb == 2:
         return True
@@ -25,18 +25,10 @@ def is_prime(nb):
     return True
 
 def is_perfect(n):
-    sum = 0
-    for i in range(1, int(n/2)+1):
-        if n%i == 0:
-            sum += i
-    if sum == n:
-        return True
-    return False
+    return sum(divisors(n))+1 == n
 
 def is_abundant(n):
-    if sum(divisors(n))+1 > n:
-        return True
-    return False
+    return sum(divisors(n))+1 > n
 
 def divisors(nb, extremum = False):
     divisors = []
@@ -79,18 +71,26 @@ def distinct_prime_factors(nb):
     return list(set(factors))
 
 def primes_below(end):
-    if end < 2: return []
+    if end < 2:
+        return []
 
-    lng = ((end//2)-1+end%2)  
-    sieve = [True]*(lng+1)  
+    lng = (end//2) - 1
+    primes = [True]*lng  
 
-    for i in range(int(end**0.5) >> 1):  
-        if not sieve[i]: continue
-        for j in range( (i*(i + 3) << 1) + 3, lng, (i << 1) + 3):  
-            sieve[j] = False  
+    for i in range(int(lng**0.5)):  
+        if primes[i]:
+            for j in range(2*i*(i + 3) + 3, lng, 2*i + 3):
+                primes[j] = False  
 
-    primes = [2]
-    
-    primes.extend([(i << 1) + 3 for i in range(lng) if sieve[i]])  
+    return [2] + [i*2 + 3 for i, j in enumerate(primes) if j]
 
-    return primes
+def is_permutation_of(nb1, nb2):
+    nb1, nb2 = list(str(nb1)), list(str(nb2))
+
+    for i in nb1:
+        if i in nb2:
+            nb2.remove(i)
+        else:
+            return False
+
+    return True
