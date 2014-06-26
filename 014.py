@@ -15,13 +15,13 @@ def collatz_sequence_length(nb):
     sequence_length[nb] = length
     return length
 
-resultat = 0
+result = 0
 longest = 0
 
 for i in range(1, 1000000):
     length = collatz_sequence_length(i)
     if length > longest:
-        resultat = i
+        result = i
         longest = length
 
-print(resultat)
+print(result)

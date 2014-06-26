@@ -2,9 +2,9 @@ import math
 
 fact = str(math.factorial(100))
 
-resultat = 0
+result = 0
 
 for i in fact:
-    resultat += int(i)
+    result += int(i)
 
-print(resultat)
+print(result)

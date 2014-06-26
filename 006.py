@@ -5,6 +5,6 @@ for i in range(1, 101):
     square_sum += i
 
 square_sum = square_sum ** 2
-resultat = square_sum ** 2 - sum_square
+result = square_sum ** 2 - sum_square
 
-print(resultat)
+print(result)

@@ -1,9 +1,9 @@
 a, b = 1, 2
-resultat = 0
+result = 0
 
 while b <= 4000000:
     if b % 2 == 0:
-        resultat += b
+        result += b
     a, b = b, a + b
 
-print(resultat)
+print(result)

@@ -1,9 +1,9 @@
 def cycle_length(den):
-    reste = 10
+    remainder = 10
     i = 0
 
-    while reste != 10 or i < 1:
-        reste = (reste % den) * 10
+    while remainder != 10 or i < 1:
+        remainder = (remainder % den) * 10
         i += 1
 
     return i
@@ -15,6 +15,6 @@ for i in range(2, 1000):
         length = cycle_length(i)
         if length > longest:
             longest = length
-            resultat = i
+            result = i
 
-print(resultat)
+print(result)

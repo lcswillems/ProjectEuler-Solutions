@@ -6,8 +6,6 @@ def max_path_sum(triangle):
         for j, k in enumerate(triangle[i]):
             triangle[i][j] = k + max([triangle[i-1][j], triangle[i-1][j+1]])
 
-    print(triangle)
-
     return triangle[-1][0]
 
 triangle = """75

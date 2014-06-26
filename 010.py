@@ -1,10 +1,10 @@
 import functions
 
-resultat = 2
+result = 2
 divisors = []
 
 for i in range(3, 2000000, 2):    
     if functions.is_prime(i):
-        resultat += i
+        result += i
 
-print(resultat)
+print(result)

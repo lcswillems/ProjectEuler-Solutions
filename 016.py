@@ -1,9 +1,8 @@
-puissance = str(2**1000)
-print(len(puissance))
+power = str(2**1000)
 
-resultat = 0
+result = 0
 
-for i in puissance:
-    resultat += int(i)
+for i in power:
+    result += int(i)
 
-print(resultat)
+print(result)

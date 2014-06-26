@@ -14,6 +14,6 @@ for b in primes:
         
         if n > longest:
             longest = n
-            resultat = a*b
+            result = a*b
 
-print(resultat)
+print(result)

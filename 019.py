@@ -14,7 +14,7 @@ def get_next_sunday(date):
 
     return date
 
-resultat = 0
+result = 0
 date = [7, 1, 1900]
 
 while date[2] != 1901:
@@ -22,7 +22,7 @@ while date[2] != 1901:
 
 while date[2] != 2001:
     if date[0] == 1:
-        resultat += 1
+        result += 1
     date = get_next_sunday(date)
 
-print(resultat)
+print(result)

@@ -6,11 +6,11 @@ numbers = {}
 
 for i in range(len(abundants)):
     for j in range(i, len(abundants)):
-        somme = abundants[i] + abundants[j]
-        if somme > 28123:
+        ssum = abundants[i] + abundants[j]
+        if ssum > 28123:
             break
-        numbers[somme] = 1
+        numbers[ssum] = 1
 
-resultat = (28123*28124)//2 - sum(numbers.keys())
+result = (28123*28124)//2 - sum(numbers.keys())
         
-print(resultat)
+print(result)
