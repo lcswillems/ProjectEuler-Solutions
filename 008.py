@@ -1,3 +1,9 @@
+def product(nbs):
+    prod = 1
+    for i in nbs:
+        prod *= int(i)
+    return prod
+
 numbers = "73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
 85861560789112949495459501737958331952853208805511\
@@ -19,13 +25,11 @@ numbers = "73167176531330624919225119674426574742355349194934\
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450"
 
-a = b = c = d = e = 1
 result = 0
 
-for i in numbers:
-    a, b, c, d, e = int(i), a, b, c, d
-    product = a*b*c*d*e
-    if product > result:
-        result = product
+for i in range(len(numbers)-13):
+    prod = product(numbers[i:i+13])
+    if prod > result:
+        result = prod
 
 print(result)
