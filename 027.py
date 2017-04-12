@@ -9,16 +9,16 @@ primes = functions.primes_below(1000)
 max_n = 0
 
 for b in primes:
-    for a in range(-999, 1000, 2):
-        f_n = b
-        n = 0
+	for a in range(-999, 1000, 2):
+		f_n = b
+		n = 0
 
-        while functions.is_prime(f_n):
-            n += 1
-            f_n = n**2 + a*n + b
-        
-        if n > max_n:
-            max_n = n
-            result = a*b
+		while functions.is_prime(f_n):
+			n += 1
+			f_n = n**2 + a*n + b
+		
+		if n > max_n:
+			max_n = n
+			result = a*b
 
 print(result)
