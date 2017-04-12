@@ -1,18 +1,14 @@
 def name_score(name):
-    score = 0
-    for i in name:
-        score += ord(i) - 64
-    return score
+	score = 0
+	for i in name:
+		score += ord(i) - 64
+	return score
 
-file = open("022_names.txt", "r")
-names = list(eval(file.read()))
-file.close()
+with open("022_names.txt") as file:
+	names = sorted(list(eval(file.read())))
 
-names.sort()
-
-result = 0
-
-for i, name in enumerate(names):
-    result += name_score(name)*(i+1)
-
+result = sum(map(
+	lambda i, name: (i+1)*name_score(name),
+	enumerate(names)
+))
 print(result)

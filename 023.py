@@ -1,16 +1,16 @@
 import functions
 
-abundants = [i for i in range(2, 28124) if functions.is_abundant(i)]
+limit = 28123
 
-numbers = {}
+abundants = [i for i in range(2, limit+1) if functions.is_abundant(i)]
+abundant_sums = set()
 
 for i in range(len(abundants)):
-    for j in range(i, len(abundants)):
-        ssum = abundants[i] + abundants[j]
-        if ssum > 28123:
-            break
-        numbers[ssum] = 1
+	for j in range(i, len(abundants)):
+		abundant_sum = abundants[i] + abundants[j]
+		if abundant_sum > limit:
+			break
+		abundant_sums.add(abundant_sum)
 
-result = (28123*28124)//2 - sum(numbers.keys())
-        
+result = limit*(limit+1)//2 - sum(list(abundant_sums))
 print(result)

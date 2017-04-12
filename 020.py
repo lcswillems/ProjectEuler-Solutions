@@ -1,10 +1,4 @@
 import math
 
-fact = str(math.factorial(100))
-
-result = 0
-
-for i in fact:
-    result += int(i)
-
+result = sum([int(i) for i in str(math.factorial(100))])
 print(result)

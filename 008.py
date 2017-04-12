@@ -1,8 +1,4 @@
-def product(nbs):
-    prod = 1
-    for i in nbs:
-        prod *= int(i)
-    return prod
+import functions
 
 numbers = "73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
@@ -28,8 +24,8 @@ numbers = "73167176531330624919225119674426574742355349194934\
 result = 0
 
 for i in range(len(numbers)-13):
-    prod = product(numbers[i:i+13])
-    if prod > result:
-        result = prod
+	prod = functions.product(list(numbers[i:i+13]))
+	if prod > result:
+		result = prod
 
 print(result)

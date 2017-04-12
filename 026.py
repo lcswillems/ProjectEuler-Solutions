@@ -8,13 +8,13 @@ def cycle_length(den):
 
     return i
 
-longest = 0
+max_length = 0
 
 for i in range(2, 1000):
     if i%2 != 0 and i%5 != 0:
         length = cycle_length(i)
-        if length > longest:
-            longest = length
+        if length > max_length:
+            max_length = length
             result = i
 
 print(result)

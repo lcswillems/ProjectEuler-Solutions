@@ -1,6 +1,6 @@
 result = 0
-remainder = 200
 
+remainder = 200
 for a in range(0, remainder+1, 200):
     remainder = 200 - a
     for b in range(0, remainder+1, 100):

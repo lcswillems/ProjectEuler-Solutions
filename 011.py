@@ -23,13 +23,13 @@ grid = [int(i) for i in grid.split()]
 products = []
 
 for i in range(400):
-    if i%20 < 17:
-        products.append(grid[i]*grid[i+1]*grid[i+2]*grid[i+3])
-    if i < 340:
-        products.append(grid[i]*grid[i+20]*grid[i+40]*grid[i+60])
-    if i%20 < 17 and i < 340:
-        products.append(grid[i]*grid[i+21]*grid[i+42]*grid[i+63])
-    if i%20 > 3 and i < 340:
-        products.append(grid[i]*grid[i+19]*grid[i+38]*grid[i+57])
-        
+	if i%20 < 17:
+		products.append(grid[i]*grid[i+1]*grid[i+2]*grid[i+3])
+	if i < 340:
+		products.append(grid[i]*grid[i+20]*grid[i+40]*grid[i+60])
+	if i%20 < 17 and i < 340:
+		products.append(grid[i]*grid[i+21]*grid[i+42]*grid[i+63])
+	if i%20 > 3 and i < 340:
+		products.append(grid[i]*grid[i+19]*grid[i+38]*grid[i+57])
+		
 print(max(products))

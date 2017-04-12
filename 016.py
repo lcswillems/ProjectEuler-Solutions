@@ -1,8 +1,1 @@
-power = str(2**1000)
-
-result = 0
-
-for i in power:
-    result += int(i)
-
-print(result)
+print(sum([int(i) for i in str(2**1000)]))

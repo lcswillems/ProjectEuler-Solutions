@@ -1,12 +1,11 @@
 def max_path_sum(triangle):
-    triangle = [[int(j) for j in i.split()] for i in triangle.split("\n")]
-    triangle.reverse()
-    
-    for i in range(1, len(triangle)):
-        for j, k in enumerate(triangle[i]):
-            triangle[i][j] = k + max([triangle[i-1][j], triangle[i-1][j+1]])
+	triangle.reverse()
+	
+	for i in range(1, len(triangle)):
+		for j, k in enumerate(triangle[i]):
+			triangle[i][j] = k + max([triangle[i-1][j], triangle[i-1][j+1]])
 
-    return triangle[-1][0]
+	return triangle[-1][0]
 
 triangle = """75
 95 64
@@ -23,5 +22,6 @@ triangle = """75
 91 71 52 38 17 14 91 43 58 50 27 29 48
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23"""
+triangle = [[int(j) for j in i.split()] for i in triangle.split("\n")]
 
 print(max_path_sum(triangle))
